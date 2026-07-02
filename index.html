@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Freecompressor — a privacy-first compression suite for images, PDFs, documents, video and audio.">
+<meta name="color-scheme" content="light">
+<title>Freecompressor — compression suite</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%232563FF'/%3E%3Cpath d='M8 8h8M8 12h8M8 16h4' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="app">
+  <!-- ------------------------------------------------------------ sidebar -->
+  <aside class="rail">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 7h8M8 12h8M8 17h4"/></svg>
+      </span>
+      <span class="name">Freecompressor<small>COMPRESSION SUITE</small></span>
+    </div>
+
+    <nav class="nav" id="nav" aria-label="Tools">
+      <div class="navitem on" data-tool="image" role="button" tabindex="0">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span class="lab">Images</span><span class="kbd">1</span>
+      </div>
+      <div class="navitem" data-tool="pdf" role="button" tabindex="0">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h1.5a1.5 1.5 0 0 1 0 3H9zM9 13v6"/></svg>
+        <span class="lab">PDF</span><span class="kbd">2</span>
+      </div>
+      <div class="navitem" data-tool="document" role="button" tabindex="0">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8M8 9h2"/></svg>
+        <span class="lab">Documents</span><span class="kbd">3</span>
+      </div>
+      <div class="navitem" data-tool="video" role="button" tabindex="0">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 9l5-3v12l-5-3z"/></svg>
+        <span class="lab">Video</span><span class="kbd">4</span>
+      </div>
+      <div class="navitem" data-tool="audio" role="button" tabindex="0">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        <span class="lab">Audio</span><span class="kbd">5</span>
+      </div>
+    </nav>
+
+    <div class="foot">
+      <div class="status"><span class="dot" id="srvDot"></span><span id="srvTxt">checking engine…</span></div>
+      <div class="priv">Images compress locally in your browser. PDF, document, video and audio use the local engine.</div>
+    </div>
+  </aside>
+
+  <!-- --------------------------------------------------------------- main -->
+  <main class="main">
+
+    <!-- ============================================================ IMAGE -->
+    <section class="view" id="view-image">
+      <div class="viewhead">
+        <h1>Images <span class="chip">PNG · JPG · WEBP · runs in-browser</span></h1>
+        <p>Compress and convert between <b>PNG, JPG, and WEBP</b> — any direction. PNG and WEBP keep <b>transparency</b>; JPG flattens onto white. Everything happens in your browser — nothing is uploaded.</p>
+      </div>
+      <div class="grid">
+        <div>
+          <div class="panel"><div class="pad">
+            <div class="drop" id="img-drop" tabindex="0">
+              <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+              <div class="t">Drop images or click to choose</div>
+              <div class="h">PNG · JPG · JPEG</div>
+            </div>
+            <input id="img-file" type="file" accept="image/png,image/jpeg" multiple hidden>
+            <div class="flist" id="img-list"></div>
+          </div></div>
+
+          <div class="panel"><div class="pad">
+            <div class="fhead" style="margin-bottom:8px"><span class="lbl">Output format</span><span class="hintv" id="img-convtag"></span></div>
+            <div class="seg" id="img-fmt">
+              <button data-fmt="orig" class="on">Original</button>
+              <button data-fmt="png">PNG</button>
+              <button data-fmt="jpeg">JPG</button>
+              <button data-fmt="webp">WEBP</button>
+            </div>
+            <div class="rule"></div>
+            <div class="fhead"><span class="lbl">Quality</span><span class="val" id="img-qval">90 <small>· high</small></span></div>
+            <input id="img-q" type="range" min="1" max="100" value="90">
+            <div class="seg" id="img-presets">
+              <button data-q="100">Lossless</button>
+              <button data-q="90" class="on">High</button>
+              <button data-q="70">Balanced</button>
+              <button data-q="45">Small</button>
+            </div>
+            <div class="note" id="img-note"></div>
+            <div class="actions">
+              <button class="btn ghost" id="img-dlOne" disabled>Download</button>
+              <button class="btn primary" id="img-dlAll" disabled>Download all</button>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="panel"><div class="pad">
+          <div class="readout" id="img-readout" style="display:none">
+            <div class="blk"><span class="k">Original</span><span class="v" id="img-rOrig">—</span></div>
+            <span class="arrow">→</span>
+            <div class="blk"><span class="k">Compressed</span><span class="v" id="img-rComp">—</span></div>
+            <div class="blk" style="margin-left:auto"><span class="k">Saved</span><span class="v" id="img-rSave">—</span></div>
+          </div>
+          <div class="stage" id="img-stage">
+            <div class="empty" id="img-empty">
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <div class="big">No image selected</div>
+              <div class="sm">drop a PNG or JPEG to begin</div>
+            </div>
+            <img class="layer imgOrig" id="img-orig" style="display:none" alt="original">
+            <img class="layer imgComp" id="img-comp" style="display:none" alt="compressed">
+            <div class="divider" id="img-divider" style="display:none"><span class="knob">⇄</span></div>
+            <span class="tag l" id="img-tagL" style="display:none">ORIGINAL</span>
+            <span class="tag r" id="img-tagR" style="display:none">COMPRESSED</span>
+            <div class="working" id="img-working"><div class="spin"></div></div>
+          </div>
+          <div class="hint" id="img-hint">Drag the divider to compare. The checkerboard shows transparency — if it survives the divider, your alpha channel is preserved.</div>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- Server-backed tool views are built from a shared template in JS -->
+    <section class="view" id="view-pdf" hidden></section>
+    <section class="view" id="view-document" hidden></section>
+    <section class="view" id="view-video" hidden></section>
+    <section class="view" id="view-audio" hidden></section>
+
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="vendor/pako.min.js"></script>
+<script src="vendor/upng.js"></script>
+<script src="js/core.js"></script>
+<script src="js/tools/image.js"></script>
+<script src="js/tools/server-tool.js"></script>
+<script src="js/tools/pdf.js"></script>
+<script src="js/tools/document.js"></script>
+<script src="js/tools/video.js"></script>
+<script src="js/tools/audio.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
