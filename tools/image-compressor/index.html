@@ -155,6 +155,10 @@
             <button type="button" data-fill="fill">Fill<small>crop to exact</small></button>
           </div>
         </div>
+        <button type="button" class="crop-btn" id="cmp-crop" disabled aria-label="Crop the selected image">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg>
+          <span class="crop-label">Crop</span>
+        </button>
         <div class="rule"></div>
         <div class="ctl-head"><span class="lbl">Compress to target size</span></div>
         <div class="chips" id="cmp-target" role="group" aria-label="Target file size">
@@ -266,6 +270,6 @@
 <script src="/js/site.js" defer></script>
 <script src="/vendor/pako.min.js" defer></script>
 <script src="/vendor/upng.js" defer></script>
-<script src="/js/compressor.js" defer></script>
+<script type="module" src="/js/compressor.js"></script>
 </body>
 </html>
