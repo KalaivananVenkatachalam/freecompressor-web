@@ -5,26 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>How to Resize an Image Without Distorting It | FreeCompressor Blog</title>
-<meta name="description" content="Keep proportions perfect, avoid the blurry-upscale trap, and learn the difference between resizing and compressing.">
+<title>How to Resize Images Without Distortion or Blur</title>
+<meta name="description" content="Resize images without distorting them: lock the aspect ratio, dodge the blurry-upscale trap, and see how resizing differs from compressing, free in-browser.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://freecompressor.online/blog/resize-image-without-distorting/">
 <meta name="theme-color" content="#2563EB">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="FreeCompressor">
-<meta property="og:title" content="How to Resize an Image Without Distorting It | FreeCompressor Blog">
-<meta property="og:description" content="Keep proportions perfect, avoid the blurry-upscale trap, and learn the difference between resizing and compressing.">
+<meta property="og:title" content="How to Resize Images Without Distortion or Blur">
+<meta property="og:description" content="Resize images without distorting them: lock the aspect ratio, dodge the blurry-upscale trap, and see how resizing differs from compressing, free in-browser.">
 <meta property="og:url" content="https://freecompressor.online/blog/resize-image-without-distorting/">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://freecompressor.online/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="FreeCompressor — free, private, in-browser file compression">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to Resize an Image Without Distorting It | FreeCompressor Blog">
-<meta name="twitter:description" content="Keep proportions perfect, avoid the blurry-upscale trap, and learn the difference between resizing and compressing.">
+<meta name="twitter:site" content="@freecompressor">
+<meta name="twitter:title" content="How to Resize Images Without Distortion or Blur">
+<meta name="twitter:description" content="Resize images without distorting them: lock the aspect ratio, dodge the blurry-upscale trap, and see how resizing differs from compressing, free in-browser.">
 <meta name="twitter:image" content="https://freecompressor.online/og-image.png">
+<meta name="twitter:image:alt" content="FreeCompressor — free, private, in-browser file compression">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script src="/js/theme-init.js"></script>
 <link rel="stylesheet" href="/css/site.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freecompressor.online/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://freecompressor.online/blog/"},{"@type":"ListItem","position":3,"name":"How to Resize an Image Without Distorting It","item":"https://freecompressor.online/blog/resize-image-without-distorting/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Resize an Image Without Distorting It","description":"Keep proportions perfect, avoid the blurry-upscale trap, and learn the difference between resizing and compressing.","datePublished":"2026-03-12","dateModified":"2026-03-12","author":{"@type":"Organization","name":"FreeCompressor Team"},"publisher":{"@type":"Organization","name":"FreeCompressor","url":"https://freecompressor.online"},"mainEntityOfPage":"https://freecompressor.online/blog/resize-image-without-distorting/","articleSection":"Optimization"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Resize an Image Without Distorting It","description":"Resize images without distorting them: lock the aspect ratio, dodge the blurry-upscale trap, and see how resizing differs from compressing, free in-browser.","image":["https://freecompressor.online/og-image.png"],"datePublished":"2026-03-12","dateModified":"2026-03-12","author":{"@type":"Organization","name":"FreeCompressor Team","url":"https://freecompressor.online/about/"},"publisher":{"@type":"Organization","name":"FreeCompressor","url":"https://freecompressor.online/","logo":{"@type":"ImageObject","url":"https://freecompressor.online/apple-touch-icon.png","width":180,"height":180}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://freecompressor.online/blog/resize-image-without-distorting/"},"articleSection":"Optimization","inLanguage":"en-US"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I resize an image without stretching it?","acceptedAnswer":{"@type":"Answer","text":"Always keep (lock) the aspect ratio so width and height scale together. If you need an exact non-matching size, crop to that ratio first, then resize — never force dimensions that change the proportions, or the image will look stretched."}},{"@type":"Question","name":"Why does my image get blurry when I resize it?","acceptedAnswer":{"@type":"Answer","text":"Enlarging (upscaling) an image invents pixels that weren't captured, which looks soft. Only downscale to a smaller size for crisp results, and start from the highest-resolution original you have."}},{"@type":"Question","name":"Is resizing the same as compressing?","acceptedAnswer":{"@type":"Answer","text":"No. Resizing changes the pixel dimensions; compressing changes the file size without changing dimensions. For the smallest, sharpest result, resize to the display size first, then compress."}}]}</script>
 </head>
 <body>
@@ -221,11 +229,11 @@ your browser.</p>
         </div>
       </div>
       <div>
-        <h4>Tools</h4>
+        <h2>Tools</h2>
         <ul><li><a href="/tools/image-compressor/">Image Compressor</a></li><li><a href="/tools/pdf-compressor/">PDF Compressor</a></li><li><a href="/tools/video-compressor/">Video Compressor</a></li><li><a href="/tools/audio-compressor/">Audio Compressor</a></li><li><a href="/tools/zip-compressor/">ZIP Compressor</a></li><li><a href="/tools/document-compressor/">Document Compressor</a></li><li><a href="/tools/">All tools →</a></li></ul>
       </div>
       <div>
-        <h4>Resources</h4>
+        <h2>Resources</h2>
         <ul>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/roadmap/">Roadmap</a></li>
@@ -234,7 +242,7 @@ your browser.</p>
         </ul>
       </div>
       <div>
-        <h4>Company</h4>
+        <h2>Company</h2>
         <ul>
           <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>

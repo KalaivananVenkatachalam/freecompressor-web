@@ -150,7 +150,8 @@ input, select { font: inherit; color: inherit; }
   background: var(--bg-raised); color: var(--text-2);
 }
 .badge-blue { background: var(--blue-soft); color: var(--blue); border-color: transparent; }
-.badge-green { background: var(--green-soft); color: var(--green); border-color: transparent; }
+.badge-green { background: var(--green-soft); color: #15803d; border-color: transparent; } /* darker green meets WCAG AA on the pale-green pill */
+[data-theme="dark"] .badge-green { color: var(--green); }
 .badge-soon {
   background: linear-gradient(120deg, var(--blue-soft), var(--green-soft));
   color: var(--blue); border-color: transparent;
@@ -694,7 +695,7 @@ input[type="range"] { width: 100%; accent-color: var(--blue); height: 28px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; padding: 52px 0 36px; }
 @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
-.footer h4 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.footer h2 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
 .footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
 .footer ul a { color: var(--text-2); font-size: 0.92rem; }
 .footer ul a:hover { color: var(--blue); }

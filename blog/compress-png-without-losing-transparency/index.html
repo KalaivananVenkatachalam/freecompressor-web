@@ -5,26 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>How to Compress PNG Without Losing Transparency | FreeCompressor Blog</title>
-<meta name="description" content="PNGs are huge but their transparency is precious. Here's how to shrink them dramatically while keeping the alpha channel perfectly intact.">
+<title>Compress PNG Without Losing Transparency (Free)</title>
+<meta name="description" content="Compress PNG files dramatically while keeping the alpha channel perfectly intact — free, in your browser, no upload and transparency fully preserved.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://freecompressor.online/blog/compress-png-without-losing-transparency/">
 <meta name="theme-color" content="#2563EB">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="FreeCompressor">
-<meta property="og:title" content="How to Compress PNG Without Losing Transparency | FreeCompressor Blog">
-<meta property="og:description" content="PNGs are huge but their transparency is precious. Here's how to shrink them dramatically while keeping the alpha channel perfectly intact.">
+<meta property="og:title" content="Compress PNG Without Losing Transparency (Free)">
+<meta property="og:description" content="Compress PNG files dramatically while keeping the alpha channel perfectly intact — free, in your browser, no upload and transparency fully preserved.">
 <meta property="og:url" content="https://freecompressor.online/blog/compress-png-without-losing-transparency/">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://freecompressor.online/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="FreeCompressor — free, private, in-browser file compression">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to Compress PNG Without Losing Transparency | FreeCompressor Blog">
-<meta name="twitter:description" content="PNGs are huge but their transparency is precious. Here's how to shrink them dramatically while keeping the alpha channel perfectly intact.">
+<meta name="twitter:site" content="@freecompressor">
+<meta name="twitter:title" content="Compress PNG Without Losing Transparency (Free)">
+<meta name="twitter:description" content="Compress PNG files dramatically while keeping the alpha channel perfectly intact — free, in your browser, no upload and transparency fully preserved.">
 <meta name="twitter:image" content="https://freecompressor.online/og-image.png">
+<meta name="twitter:image:alt" content="FreeCompressor — free, private, in-browser file compression">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script src="/js/theme-init.js"></script>
 <link rel="stylesheet" href="/css/site.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freecompressor.online/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://freecompressor.online/blog/"},{"@type":"ListItem","position":3,"name":"How to Compress PNG Without Losing Transparency","item":"https://freecompressor.online/blog/compress-png-without-losing-transparency/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Compress PNG Without Losing Transparency","description":"PNGs are huge but their transparency is precious. Here's how to shrink them dramatically while keeping the alpha channel perfectly intact.","datePublished":"2026-06-23","dateModified":"2026-06-23","author":{"@type":"Organization","name":"FreeCompressor Team"},"publisher":{"@type":"Organization","name":"FreeCompressor","url":"https://freecompressor.online"},"mainEntityOfPage":"https://freecompressor.online/blog/compress-png-without-losing-transparency/","articleSection":"Image Compression"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Compress PNG Without Losing Transparency","description":"Compress PNG files dramatically while keeping the alpha channel perfectly intact — free, in your browser, no upload and transparency fully preserved.","image":["https://freecompressor.online/og-image.png"],"datePublished":"2026-06-23","dateModified":"2026-06-23","author":{"@type":"Organization","name":"FreeCompressor Team","url":"https://freecompressor.online/about/"},"publisher":{"@type":"Organization","name":"FreeCompressor","url":"https://freecompressor.online/","logo":{"@type":"ImageObject","url":"https://freecompressor.online/apple-touch-icon.png","width":180,"height":180}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://freecompressor.online/blog/compress-png-without-losing-transparency/"},"articleSection":"Image Compression","inLanguage":"en-US"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does compressing a PNG remove transparency?","acceptedAnswer":{"@type":"Answer","text":"It shouldn't. FreeCompressor uses palette quantization that preserves the full alpha channel, so transparency survives compression. Converting to JPG is what destroys transparency — avoid that for images with transparent areas."}},{"@type":"Question","name":"How do I make a PNG smaller without losing quality?","acceptedAnswer":{"@type":"Answer","text":"Use palette quantization (reducing the number of colors), which is lossless-looking for most logos and graphics and can halve the file. For photographic PNGs, converting to WebP keeps transparency while shrinking much further."}},{"@type":"Question","name":"What's the best format for transparent images?","acceptedAnswer":{"@type":"Answer","text":"PNG for maximum compatibility and lossless quality, or WebP for much smaller files that still keep transparency. Never JPG — it has no transparency support."}}]}</script>
 </head>
 <body>
@@ -218,11 +226,11 @@ confirm the transparency against the checkerboard — free and 100% in your brow
         </div>
       </div>
       <div>
-        <h4>Tools</h4>
+        <h2>Tools</h2>
         <ul><li><a href="/tools/image-compressor/">Image Compressor</a></li><li><a href="/tools/pdf-compressor/">PDF Compressor</a></li><li><a href="/tools/video-compressor/">Video Compressor</a></li><li><a href="/tools/audio-compressor/">Audio Compressor</a></li><li><a href="/tools/zip-compressor/">ZIP Compressor</a></li><li><a href="/tools/document-compressor/">Document Compressor</a></li><li><a href="/tools/">All tools →</a></li></ul>
       </div>
       <div>
-        <h4>Resources</h4>
+        <h2>Resources</h2>
         <ul>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/roadmap/">Roadmap</a></li>
@@ -231,7 +239,7 @@ confirm the transparency against the checkerboard — free and 100% in your brow
         </ul>
       </div>
       <div>
-        <h4>Company</h4>
+        <h2>Company</h2>
         <ul>
           <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>

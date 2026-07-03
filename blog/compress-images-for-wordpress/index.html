@@ -5,26 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>How to Compress Images for WordPress (Without a Bloated Plugin) | FreeCompressor Blog</title>
-<meta name="description" content="Compress before you upload and skip the server-side plugin overhead. A faster, more private image workflow for any WordPress site.">
+<title>Compress Images for WordPress Without a Plugin</title>
+<meta name="description" content="Compress images for WordPress before you upload and skip bloated server plugins — a faster, private, free workflow that runs entirely in your browser.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://freecompressor.online/blog/compress-images-for-wordpress/">
 <meta name="theme-color" content="#2563EB">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="FreeCompressor">
-<meta property="og:title" content="How to Compress Images for WordPress (Without a Bloated Plugin) | FreeCompressor Blog">
-<meta property="og:description" content="Compress before you upload and skip the server-side plugin overhead. A faster, more private image workflow for any WordPress site.">
+<meta property="og:title" content="Compress Images for WordPress Without a Plugin">
+<meta property="og:description" content="Compress images for WordPress before you upload and skip bloated server plugins — a faster, private, free workflow that runs entirely in your browser.">
 <meta property="og:url" content="https://freecompressor.online/blog/compress-images-for-wordpress/">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://freecompressor.online/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="FreeCompressor — free, private, in-browser file compression">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to Compress Images for WordPress (Without a Bloated Plugin) | FreeCompressor Blog">
-<meta name="twitter:description" content="Compress before you upload and skip the server-side plugin overhead. A faster, more private image workflow for any WordPress site.">
+<meta name="twitter:site" content="@freecompressor">
+<meta name="twitter:title" content="Compress Images for WordPress Without a Plugin">
+<meta name="twitter:description" content="Compress images for WordPress before you upload and skip bloated server plugins — a faster, private, free workflow that runs entirely in your browser.">
 <meta name="twitter:image" content="https://freecompressor.online/og-image.png">
+<meta name="twitter:image:alt" content="FreeCompressor — free, private, in-browser file compression">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script src="/js/theme-init.js"></script>
 <link rel="stylesheet" href="/css/site.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freecompressor.online/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://freecompressor.online/blog/"},{"@type":"ListItem","position":3,"name":"How to Compress Images for WordPress (Without a Bloated Plugin)","item":"https://freecompressor.online/blog/compress-images-for-wordpress/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Compress Images for WordPress (Without a Bloated Plugin)","description":"Compress before you upload and skip the server-side plugin overhead. A faster, more private image workflow for any WordPress site.","datePublished":"2026-06-13","dateModified":"2026-06-13","author":{"@type":"Organization","name":"FreeCompressor Team"},"publisher":{"@type":"Organization","name":"FreeCompressor","url":"https://freecompressor.online"},"mainEntityOfPage":"https://freecompressor.online/blog/compress-images-for-wordpress/","articleSection":"Performance"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Compress Images for WordPress (Without a Bloated Plugin)","description":"Compress images for WordPress before you upload and skip bloated server plugins — a faster, private, free workflow that runs entirely in your browser.","image":["https://freecompressor.online/og-image.png"],"datePublished":"2026-06-13","dateModified":"2026-06-13","author":{"@type":"Organization","name":"FreeCompressor Team","url":"https://freecompressor.online/about/"},"publisher":{"@type":"Organization","name":"FreeCompressor","url":"https://freecompressor.online/","logo":{"@type":"ImageObject","url":"https://freecompressor.online/apple-touch-icon.png","width":180,"height":180}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://freecompressor.online/blog/compress-images-for-wordpress/"},"articleSection":"Performance","inLanguage":"en-US"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I compress images before uploading to WordPress?","acceptedAnswer":{"@type":"Answer","text":"Yes. Compressing before upload gives you smaller files, faster uploads, less server load and no dependency on a compression plugin. WordPress still generates its responsive sizes from your already-optimized original."}},{"@type":"Question","name":"Do I still need an image plugin if I compress first?","acceptedAnswer":{"@type":"Answer","text":"Often not. If you compress and convert to WebP before uploading, you get most of the benefit a plugin provides without the added server processing or monthly quota."}}]}</script>
 </head>
 <body>
@@ -214,11 +222,11 @@ browser.</p>
         </div>
       </div>
       <div>
-        <h4>Tools</h4>
+        <h2>Tools</h2>
         <ul><li><a href="/tools/image-compressor/">Image Compressor</a></li><li><a href="/tools/pdf-compressor/">PDF Compressor</a></li><li><a href="/tools/video-compressor/">Video Compressor</a></li><li><a href="/tools/audio-compressor/">Audio Compressor</a></li><li><a href="/tools/zip-compressor/">ZIP Compressor</a></li><li><a href="/tools/document-compressor/">Document Compressor</a></li><li><a href="/tools/">All tools →</a></li></ul>
       </div>
       <div>
-        <h4>Resources</h4>
+        <h2>Resources</h2>
         <ul>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/roadmap/">Roadmap</a></li>
@@ -227,7 +235,7 @@ browser.</p>
         </ul>
       </div>
       <div>
-        <h4>Company</h4>
+        <h2>Company</h2>
         <ul>
           <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>
