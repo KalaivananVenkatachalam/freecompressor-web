@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>How to Compress Images for WordPress (Without a Bloated Plugin) | FreeCompressor Blog</title>
+<meta name="description" content="Compress before you upload and skip the server-side plugin overhead. A faster, more private image workflow for any WordPress site.">
+<link rel="canonical" href="https://freecompressor.online/blog/compress-images-for-wordpress/">
+<meta name="theme-color" content="#2563EB">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FreeCompressor">
+<meta property="og:title" content="How to Compress Images for WordPress (Without a Bloated Plugin) | FreeCompressor Blog">
+<meta property="og:description" content="Compress before you upload and skip the server-side plugin overhead. A faster, more private image workflow for any WordPress site.">
+<meta property="og:url" content="https://freecompressor.online/blog/compress-images-for-wordpress/">
+<meta property="og:image" content="https://freecompressor.online/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Compress Images for WordPress (Without a Bloated Plugin) | FreeCompressor Blog">
+<meta name="twitter:description" content="Compress before you upload and skip the server-side plugin overhead. A faster, more private image workflow for any WordPress site.">
+<meta name="twitter:image" content="https://freecompressor.online/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script src="/js/theme-init.js"></script>
+<link rel="stylesheet" href="/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freecompressor.online/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://freecompressor.online/blog/"},{"@type":"ListItem","position":3,"name":"How to Compress Images for WordPress (Without a Bloated Plugin)","item":"https://freecompressor.online/blog/compress-images-for-wordpress/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Compress Images for WordPress (Without a Bloated Plugin)","description":"Compress before you upload and skip the server-side plugin overhead. A faster, more private image workflow for any WordPress site.","datePublished":"2026-06-13","dateModified":"2026-06-13","author":{"@type":"Organization","name":"FreeCompressor Team"},"publisher":{"@type":"Organization","name":"FreeCompressor","url":"https://freecompressor.online"},"mainEntityOfPage":"https://freecompressor.online/blog/compress-images-for-wordpress/","articleSection":"Performance"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I compress images before uploading to WordPress?","acceptedAnswer":{"@type":"Answer","text":"Yes. Compressing before upload gives you smaller files, faster uploads, less server load and no dependency on a compression plugin. WordPress still generates its responsive sizes from your already-optimized original."}},{"@type":"Question","name":"Do I still need an image plugin if I compress first?","acceptedAnswer":{"@type":"Answer","text":"Often not. If you compress and convert to WebP before uploading, you get most of the benefit a plugin provides without the added server processing or monthly quota."}}]}</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2563EB"/><path d="M9 12l4 4-4 4M23 12l-4 4 4 4" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M16 10v12" stroke="#93C5FD" stroke-width="2.4" stroke-linecap="round"/></svg><span class="wordmark">Free<span>Compressor</span></span></a>
+    <nav class="nav-links" aria-label="Main">
+      <div class="dd">
+        <button type="button" aria-expanded="false" aria-haspopup="true">Tools <svg style="transform:rotate(90deg)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="dd-menu" role="menu">
+        <a class="dd-item" href="/tools/image-compressor/">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span>
+          <span><b>Image Compressor</b><span>Compress PNG, JPG & WebP in your browser — no uploads.</span></span>
+        </a>
+        <a class="dd-item" href="/tools/pdf-compressor/">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h1.5a1.5 1.5 0 0 1 0 3H9zM9 13v6"/></svg></span>
+          <span><b>PDF Compressor<span class="soon-tag">SOON</span></b><span>Shrink PDFs while keeping text sharp and selectable.</span></span>
+        </a>
+        <a class="dd-item" href="/tools/video-compressor/">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 9l5-3v12l-5-3z"/></svg></span>
+          <span><b>Video Compressor<span class="soon-tag">SOON</span></b><span>Compress MP4, MOV & WebM with modern codecs.</span></span>
+        </a>
+        <a class="dd-item" href="/tools/audio-compressor/">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
+          <span><b>Audio Compressor<span class="soon-tag">SOON</span></b><span>Convert & compress MP3, WAV, M4A and FLAC.</span></span>
+        </a>
+        <a class="dd-item" href="/tools/zip-compressor/">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8v13H3V8"/><path d="M1 3h22v5H1z"/><path d="M10 12h4"/></svg></span>
+          <span><b>ZIP Compressor<span class="soon-tag">SOON</span></b><span>Create and optimize ZIP archives in your browser.</span></span>
+        </a>
+        <a class="dd-item" href="/tools/document-compressor/">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8M8 9h2"/></svg></span>
+          <span><b>Document Compressor<span class="soon-tag">SOON</span></b><span>Shrink DOCX, PPTX & XLSX without breaking them.</span></span>
+        </a>
+        <a class="dd-item" href="/tools/image-converter/">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span>
+          <span><b>Image Converter<span class="soon-tag">SOON</span></b><span>Convert between PNG, JPG, WebP, AVIF and more.</span></span>
+        </a>
+        <a class="dd-item" href="/tools/pdf-converter/">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span>
+          <span><b>PDF Converter<span class="soon-tag">SOON</span></b><span>Turn PDFs into images or documents — and back.</span></span>
+        </a>
+        <a class="dd-item" href="/tools/video-converter/">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span>
+          <span><b>Video Converter<span class="soon-tag">SOON</span></b><span>Convert video between MP4, WebM, MOV and more.</span></span>
+        </a>
+        <a class="dd-item" href="/tools/audio-converter/">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span>
+          <span><b>Audio Converter<span class="soon-tag">SOON</span></b><span>Convert audio between MP3, AAC, Opus and FLAC.</span></span>
+        </a>
+        </div>
+      </div>
+      <a href="/blog/" aria-current="page">Blog</a>
+      <a href="/roadmap/">Roadmap</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <button class="theme-btn" type="button" aria-label="Toggle dark mode">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm" href="/#compress">Compress Now</a>
+      <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<nav class="crumbs wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><span aria-current="page">How to Compress Images for WordPress (Without a Bloated Plugin)</span></li></ol></nav>
+<main id="main">
+
+<article>
+  <header class="article-head" style="padding-top:40px">
+    <span class="cat" style="color:var(--blue);font-weight:800;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase">Performance</span>
+    <h1>How to Compress Images for WordPress (Without a Bloated Plugin)</h1>
+    <div class="post-meta"><span class="avatar">FC</span>FreeCompressor Team<span class="dot"></span><time datetime="2026-06-13">Jun 13, 2026</time><span class="dot"></span>7 min read</div>
+  </header>
+  <div class="prose">
+<p>Slow WordPress sites are usually slow because of images. The common fix is to install a
+compression plugin — but plugins add server load, monthly quotas and one more thing to maintain.
+There's a simpler, faster, more private approach: <strong>compress before you upload</strong>.</p>
+
+<h2>Why compress before uploading</h2>
+<ul>
+  <li><strong>Smaller media library</strong> — your originals are already optimized, so every
+  size WordPress generates from them is smaller too.</li>
+  <li><strong>No server processing</strong> — compression happens on your machine, not by taxing
+  your host's CPU on every upload.</li>
+  <li><strong>No plugin quota or subscription</strong> — nothing metered, nothing to renew.</li>
+  <li><strong>Privacy</strong> — with a browser tool, images aren't sent to a third-party
+  optimization service.</li>
+</ul>
+
+<h2>The workflow</h2>
+<ol>
+  <li><strong>Resize to display width first.</strong> If your content column is 800px wide, you
+  don't need a 4000px image. Resize in your editor before compressing.</li>
+  <li><strong>Compress and convert to WebP</strong> in the
+  <a href="/tools/image-compressor/">FreeCompressor image tool</a> — drop the images, pick WebP,
+  download.</li>
+  <li><strong>Upload to WordPress.</strong> Modern WordPress serves your images with responsive
+  <code>srcset</code> markup and lazy-loads them automatically.</li>
+</ol>
+
+<h2>What WordPress already does for you</h2>
+<p>Recent WordPress versions add <code>loading="lazy"</code> to below-the-fold images and generate
+multiple sizes with <code>srcset</code> out of the box. It supports WebP uploads natively too. So
+once your originals are compressed and in a modern format, much of the “optimization plugin” job is
+already handled by core.</p>
+
+<h2>Do you ever still need a plugin?</h2>
+<p>If you have thousands of legacy images already uploaded, a bulk-optimization plugin can be worth
+it as a one-time cleanup. But for ongoing publishing, compressing before upload is faster, cheaper
+and keeps your stack lean. For the broader speed picture, see
+<a href="/blog/why-large-images-slow-down-websites/">why large images slow down websites</a> and our
+<a href="/blog/image-optimization-for-web-performance/">web-performance checklist</a>.</p>
+
+<h2>Optimize your next upload</h2>
+<p>Before your next post, run the images through the
+<a href="/tools/image-compressor/">image compressor</a> — free, unlimited, and nothing leaves your
+browser.</p>
+</div>
+
+  <aside class="article-cta">
+    <h3>Compress your images right now</h3>
+    <p>Free, unlimited, and your files never leave your browser.</p>
+    <a class="btn btn-primary" href="/#compress">Open the Image Compressor</a>
+  </aside>
+</article>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">FAQ</span><h2>Frequently asked questions</h2></div>
+    <div class="faq">
+      <details><summary>Should I compress images before uploading to WordPress?</summary><p>Yes. Compressing before upload gives you smaller files, faster uploads, less server load and no dependency on a compression plugin. WordPress still generates its responsive sizes from your already-optimized original.</p></details>
+      <details><summary>Do I still need an image plugin if I compress first?</summary><p>Often not. If you compress and convert to WebP before uploading, you get most of the benefit a plugin provides without the added server processing or monthly quota.</p></details></div>
+  </div>
+</section>
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head"><h2>Related posts</h2></div>
+    <div class="grid-3">
+    <a class="card post-card hover reveal" href="/blog/image-optimization-for-web-performance/" data-cat="Performance">
+      <span class="cover" style="background:linear-gradient(135deg,#16a34a,#0891b2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+      <span class="body">
+        <span class="cat">Performance</span>
+        <h3>Image Optimization for Web Performance: A Practical Checklist</h3>
+        <p>Images are ~50% of page weight. Here's the checklist we use to cut LCP times: formats, sizes, lazy loading and CDNs.</p>
+        <span class="post-meta"><span class="avatar">FC</span>FreeCompressor Team<span class="dot"></span>Jul 1, 2026<span class="dot"></span>8 min read</span>
+      </span>
+    </a>
+    <a class="card post-card hover reveal" href="/blog/why-large-images-slow-down-websites/" data-cat="Performance">
+      <span class="cover" style="background:linear-gradient(135deg,#16a34a,#0891b2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+      <span class="body">
+        <span class="cat">Performance</span>
+        <h3>Why Large Images Slow Down Your Website (and How to Fix It)</h3>
+        <p>Images are ~50% of page weight and the usual LCP culprit. Here's what oversized images cost you — and the five-step fix.</p>
+        <span class="post-meta"><span class="avatar">FC</span>FreeCompressor Team<span class="dot"></span>May 24, 2026<span class="dot"></span>7 min read</span>
+      </span>
+    </a>
+    <a class="card post-card hover reveal" href="/blog/ecommerce-image-optimization/" data-cat="Performance">
+      <span class="cover" style="background:linear-gradient(135deg,#2563eb,#16a34a)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><circle cx="5.5" cy="6.5" r="0.5"/><circle cx="8" cy="6.5" r="0.5"/></svg></span>
+      <span class="body">
+        <span class="cat">Performance</span>
+        <h3>How to Compress Images for Online Stores (Ecommerce)</h3>
+        <p>Product images sell — but heavy ones kill conversions. How to keep them crisp, consistent and fast on any store platform.</p>
+        <span class="post-meta"><span class="avatar">FC</span>FreeCompressor Team<span class="dot"></span>Apr 28, 2026<span class="dot"></span>7 min read</span>
+      </span>
+    </a></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="about-col">
+        <a class="brand" href="/"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2563EB"/><path d="M9 12l4 4-4 4M23 12l-4 4 4 4" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M16 10v12" stroke="#93C5FD" stroke-width="2.4" stroke-linecap="round"/></svg><span class="wordmark">Free<span>Compressor</span></span></a>
+        <p>Free, privacy-first file compression that runs in your browser. No uploads, no accounts, no limits.</p>
+        <div class="socials">
+          <a href="https://x.com/" aria-label="X (Twitter)" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L23.3 22h-6.3l-4.9-6.4L6.5 22H3.4l7.3-8.3L1 2h6.5l4.4 5.9L18.9 2zm-1.1 18.1h1.7L6.6 3.8H4.7l13.1 16.3z"/></svg></a>
+          <a href="https://github.com/" aria-label="GitHub" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.2 5 18.2 5.3 18.2 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .4.2.7.8.6a11.5 11.5 0 0 0 7.9-10.9A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.4v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.4H3.5V9h3.6v11.4z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul><li><a href="/tools/image-compressor/">Image Compressor</a></li><li><a href="/tools/pdf-compressor/">PDF Compressor</a></li><li><a href="/tools/video-compressor/">Video Compressor</a></li><li><a href="/tools/audio-compressor/">Audio Compressor</a></li><li><a href="/tools/zip-compressor/">ZIP Compressor</a></li><li><a href="/tools/document-compressor/">Document Compressor</a></li><li><a href="/tools/">All tools →</a></li></ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/blog/image-optimization-for-web-performance/">Performance guide</a></li>
+          <li><a href="https://github.com/" rel="noopener" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> FreeCompressor. All rights reserved.</span>
+      <span class="lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Your files never leave your device.</span>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/js/site.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+# FreeCompressor vulnerability disclosure — RFC 9116
+Contact: mailto:security@freecompressor.online
+Contact: https://freecompressor.online/contact/
+Expires: 2027-07-03T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://freecompressor.online/.well-known/security.txt
+Policy: https://freecompressor.online/privacy/
